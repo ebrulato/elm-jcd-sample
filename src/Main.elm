@@ -8,6 +8,7 @@ import Geolocation exposing (Error, Location, now)
 import Html exposing (Html, div, h1, img, text)
 import Http exposing (Error)
 import HttpBuilder exposing (send)
+import Key exposing (apiKey)
 import Messages exposing (..)
 import Navigation
 import Request.Contracts exposing (..)
@@ -21,16 +22,6 @@ import Views.Error exposing (errorLocation2String, view)
 import Views.Spinner exposing (view)
 import Views.Station exposing (view)
 import Views.Stations exposing (view)
-
-
----- APIKEY ----
--- TODO : set your own API KEY here :
--- see https://developer.jcdecaux.com for details
-
-
-apiKey =
-    "YOUR KEY"
-
 
 
 ---- MODEL ----
