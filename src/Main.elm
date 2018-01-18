@@ -162,7 +162,10 @@ setRoute maybeRoute model =
                    )
 
         Just StepError ->
-            model => Cmd.none
+            if (model.errorHttp /= Nothing) || (model.errorLocation /= Nothing) then
+                model => Cmd.none
+            else
+                { model | step = StepInit } => Route.modifyUrl StepInit
 
         Just StepContracts ->
             if List.isEmpty model.contracts then
