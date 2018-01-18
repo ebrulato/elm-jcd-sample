@@ -11,7 +11,7 @@ I based my work on the excellent Elm SPA Sample provided by [elm-spa-example]( h
 ## Installation
 
 This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
-See [here](https://github.com/ebrulato/elm-jcd-sample/application.md) for details (default readme).
+See [here](application.md) for details (default readme).
 
 ## DONE
 
