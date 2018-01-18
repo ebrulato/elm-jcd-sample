@@ -6,7 +6,7 @@ I will try to update this application to test some Elm behaviors with some real 
 
 ## Inspiration
 
-I based my work on the excellent Elm SPA Sample provided by [elm-spa-example]( https://github.com/rtfeldman/elm-spa-example), but as I am learning Elm, I  remove a lot of stuff that I don't need. My purpose is just to create my first Elm App. I don't want to integrate too much complexity.  
+I based my work on the excellent Elm SPA Sample provided by [elm-spa-example]( https://github.com/rtfeldman/elm-spa-example), but as I am learning Elm, I  removed a lot of stuff that I don't need (or understand very well). My purpose is just to create my first Elm App and to learn Elm in a "real" context. So, I don't want to integrate too much complexity.  
 
 ## Installation
 
@@ -25,3 +25,4 @@ See [here](https://github.com/ebrulato/elm-jcd-sample/application.md) for detail
 
 * Use local storage to store the contract selected
 * Update the interface to have a better experience (with tachyon)
+* Add a shortlink installer (PWA style)
