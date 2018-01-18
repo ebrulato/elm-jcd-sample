@@ -29,7 +29,7 @@ import Views.Stations exposing (view)
 
 
 apiKey =
-    "YOUR KEY"
+    "d70f7e151150b05cd1d7ebde7e8b87423ec8b4e9"
 
 
 
