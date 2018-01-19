@@ -128,8 +128,9 @@ view model =
         [ classes
             [ flex
             , flex_column
-            , debug
-            , debug_grid
+
+            --            , debug
+            --            , debug_grid
             , avenir
             ]
         ]
