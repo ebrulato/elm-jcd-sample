@@ -1,7 +1,5 @@
 module Main exposing (..)
 
---import Html.Attributes exposing (href)
-
 import Data.Contract exposing (..)
 import Data.Station exposing (..)
 import Geolocation exposing (Error, Location, now)
@@ -15,6 +13,8 @@ import Request.Contracts exposing (..)
 import Request.Stations exposing (..)
 import Result
 import Route exposing (..)
+import Tachyons exposing (classes, tachyons)
+import Tachyons.Classes exposing (avenir, debug, debug_grid, flex, flex_column)
 import Task
 import Utils exposing (..)
 import Views.Contracts exposing (view)
@@ -124,6 +124,24 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
+    div
+        [ classes
+            [ flex
+            , flex_column
+            , debug
+            , debug_grid
+            , avenir
+            ]
+        ]
+        [ tachyons.css
+
+        --, viewHeader
+        , viewPage model
+        ]
+
+
+viewPage : Model -> Html Msg
+viewPage model =
     if model.isLoading then
         -- for the spinner :)
         Views.Spinner.view

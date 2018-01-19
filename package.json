@@ -1,0 +1,29 @@
+{
+  "name": "elm-jcd-sample",
+  "version": "1.0.0",
+  "description": "Elm sample with the JCD's API",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "svg-country-flags": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebrulato/elm-jcd-sample.git"
+  },
+  "keywords": [
+    "Elm"
+  ],
+  "author": "ebrulato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ebrulato/elm-jcd-sample/issues"
+  },
+  "homepage": "https://github.com/ebrulato/elm-jcd-sample#readme"
+}

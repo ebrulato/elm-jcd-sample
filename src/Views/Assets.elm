@@ -1,4 +1,4 @@
-module Views.Assets exposing (error, spinner, src, url)
+module Views.Assets exposing (error, flag, spinner, src, url)
 
 {-| Assets, such as images, videos, and audio. (We only have images for now.)
 We should never expose asset URLs directly; this module should be in charge of
@@ -25,6 +25,11 @@ error =
 spinner : Image
 spinner =
     Image "assets/spinner.gif"
+
+
+flag : String -> Image
+flag code =
+    Image ("assets/png100px/" ++ String.toLower code ++ ".png")
 
 
 

@@ -20,6 +20,7 @@ See [here](application.md) for details (default readme).
 * NoRedInk/elm-decode-pipeline to deal with the http request response.
 * elm-lang/navigation
 * lukewestby/elm-http-builder which is great to make Http request
+* https://github.com/hjnilsson/country-flags
 
 ## TODO
 
