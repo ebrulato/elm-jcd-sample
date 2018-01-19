@@ -16,6 +16,7 @@ import Route exposing (..)
 import Tachyons exposing (classes, tachyons)
 import Tachyons.Classes exposing (avenir, debug, debug_grid, flex, flex_column)
 import Task
+import Time exposing (..)
 import Utils exposing (..)
 import Views.Contracts exposing (view)
 import Views.Error exposing (errorLocation2String, view)
@@ -37,6 +38,7 @@ type alias Model =
     , step : Step
     , isLoading : Bool
     , warningLocation : Maybe String
+    , time : Maybe Time
     }
 
 
@@ -52,6 +54,7 @@ init location =
         , step = StepInit
         , isLoading = True
         , warningLocation = Nothing
+        , time = Nothing
         }
 
 
@@ -96,7 +99,7 @@ update msg model =
                     { model | stations = List.sortBy .name stations, isLoading = True }
             in
             if model.warningLocation == Nothing then
-                newModel => Task.attempt processGeolocation now
+                newModel => Task.attempt processGeolocation Geolocation.now
             else
                 { newModel | step = StepStations, isLoading = False } => Route.newUrl StepStations
 
@@ -116,6 +119,9 @@ update msg model =
 
         OnError error errLoc ->
             { model | errorHttp = error, errorLocation = errLoc, step = StepError, isLoading = False } => Route.newUrl StepError
+
+        Tick time ->
+            { model | time = Just time } => Cmd.none
 
 
 
@@ -161,7 +167,7 @@ viewPage model =
                 Views.Stations.view model.stations
 
             StepStation ->
-                Views.Station.view model.stations model.stationSelected
+                Views.Station.view model.stations model.stationSelected model.time
 
 
 
@@ -209,11 +215,20 @@ setRoute maybeRoute model =
 ---- PROGRAM ----
 
 
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Time.every Time.minute Tick
+
+
+
+---- PROGRAM ----
+
+
 main : Program Never Model Msg
 main =
     Navigation.program (Route.fromLocation >> SetRoute)
         { view = view
         , init = init
         , update = update
-        , subscriptions = always Sub.none
+        , subscriptions = subscriptions
         }

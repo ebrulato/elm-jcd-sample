@@ -4,6 +4,7 @@ import Data.Contract exposing (Contract)
 import Data.Station exposing (Station)
 import Geolocation
 import Http exposing (Error)
+import Time
 
 
 --import Navigation
@@ -18,6 +19,7 @@ type Msg
     | OnError (Maybe Error) (Maybe Geolocation.Error)
     | OnErrorLoc Geolocation.Error
     | OnLocation Geolocation.Location
+    | Tick Time.Time
 
 
 type Step
